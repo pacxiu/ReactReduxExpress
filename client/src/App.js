@@ -19,6 +19,8 @@ import { setAddress } from './duck/user';
 import { setNetwork } from './duck/network';
 import { setWeb3, setContract } from './duck/web3';
 
+import socket from './initialization/sockets'
+
 class App extends Component {
 	constructor() {
 		super();
