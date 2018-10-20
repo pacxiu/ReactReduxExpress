@@ -1,34 +1,19 @@
 {
-  "name": "cryptowars",
+  "name": "expressApp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-redux": "^5.0.7",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-router-redux": "^4.0.8",
-    "react-scripts": "1.1.4",
-    "react-svg": "^3.0.2",
-    "react-tooltip": "^3.5.1",
-    "redux": "^4.0.0",
-    "redux-promise": "^0.6.0",
-    "web3": "^1.0.0-beta.34"
+    "concurrently": "^4.0.1",
+    "express": "^4.16.3",
+    "firebase": "^5.5.1",
+    "nodemon": "^1.18.4",
+    "socket.io": "^2.1.1"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-app-rewired eject"
-  },
-  "devDependencies": {
-    "classnames": "^2.2.6",
-    "node-sass": "^4.9.3",
-    "react-app-rewire-css-modules": "github:codebandits/react-app-rewire-css-modules",
-    "react-app-rewired": "^1.5.2",
-    "sass-loader": "^7.1.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2"
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   }
 }
